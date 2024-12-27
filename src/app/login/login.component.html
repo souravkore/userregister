@@ -1,0 +1,16 @@
+<button (click)="Register()" class="button">Register</button>
+<div class="login">
+    <h2>Login</h2>
+    
+    <input type="password" placeholder="Enter Password" [(ngModel)]="password" class="form-input" />
+    
+    <button (click)="login()" class="submit-button">Login</button>
+  </div>
+  
+  <div *ngIf="loginSubmitted" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeLoginModal()">×</span>
+      <h3>{{ loginSuccess ? 'Login Successful' : 'Login Failed' }}</h3>
+      <p>{{ loginSuccess ? 'Welcome back!' : 'Please check your credentials and try again.' }}</p>
+    </div> 
+  </div>

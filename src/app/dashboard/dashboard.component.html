@@ -1,0 +1,13 @@
+<div class="dashboard">
+    <h2>User Details</h2>
+    <button (click)="getUserData('jdoe@sample.com', '3fa85f64-5717-4562-b3fc-2c963f66afa6')" class="fetch-button">
+      Fetch User Data
+    </button>
+  
+    <div *ngIf="userData" class="user-data">
+      <p><span class="label">Name:</span> {{ userData.firstName }} {{ userData.lastName }}</p>
+      <p><span class="label">Email:</span> {{ userData.email }}</p>
+      <p><span class="label">State:</span> {{ userData.state }}</p>
+      <p><span class="label">Subscribed:</span> {{ userData.subscribe }}</p>
+    </div> 
+  </div>

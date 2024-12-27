@@ -1,0 +1,30 @@
+<div class="registration">
+    <h2>Register</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="register()">
+        <input formControlName="firstName" placeholder="First Name" class="form-input" />
+        <input formControlName="lastName" placeholder="Last Name" class="form-input" />
+
+        <select formControlName="state" class="form-input">
+            <option value="" disabled selected>Select State</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+        </select>
+
+        <input formControlName="email" placeholder="Email" type="email" class="form-input" />
+
+        <label class="subscribe-label">
+            <input formControlName="subscribe" type="checkbox" /> Subscribe to newsletter
+        </label>
+
+        <button type="submit" class="submit-button">Register</button>
+    </form>
+</div>
+
+<div *ngIf="formSubmitted" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">×</span>
+        <h3>{{ successMessage ? 'Registration Successful' : 'Registration Failed' }}</h3>
+        <p>{{ successMessage ? 'Thank you for registering!' : 'Please check your form and try again.' }}</p>
+    </div> 
+</div>
